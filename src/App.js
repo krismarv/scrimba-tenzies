@@ -1,12 +1,15 @@
 import './App.css';
 import React from "react"
 import Basics from './components/Basics';
-import Dice from './components/Dice'
+import Dice from './components/Dice';
+import Win from './components/Win'
 
 function App() {
   // STATES
   const [dice, setDice] = React.useState(diceInitial())
+  const [win, setWin] = React.useState(false)
 
+  //initialize dice state
   function diceInitial(){
     let arr = []
     for (let i=0; i<10; i++) {
@@ -18,7 +21,7 @@ function App() {
     }
     return arr
   }
-
+  // FUNCTIONS  
   function hold(event) {
     setDice((prevDice)=>{
       return prevDice.map((item) => {
@@ -43,8 +46,24 @@ function App() {
     })
   }
 
+  // WIN
+  React.useEffect(()=>{
+    let winner = dice.every(item=>item.number===dice[0].number&&item.stopped)
+    if (winner===true) {
+      setWin(true);
+    }
+  }, [dice])
+
+  function newGame() {
+    setWin(false);
+    setDice(diceInitial())
+  }
   return (
     <div className='canvas'>
+      <Win 
+        win={win}
+        newGame={newGame}
+      />
       <Basics />
       <Dice
         dice={dice}

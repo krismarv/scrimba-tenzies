@@ -14,3 +14,7 @@ code {
 .stopped {
   background-color: darkgoldenrod;
 }
+.none {
+  display:none
+}
+ 
