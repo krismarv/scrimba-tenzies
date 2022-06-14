@@ -1,0 +1,39 @@
+.you-win {
+    z-index:100
+}
+.win-container {
+    position:absolute;
+    top:0;
+    left:0;
+    height:100vh;
+    width:100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.win-container.none {
+    display:none
+}
+.win-button {
+    z-index:100;
+    position:absolute;
+    top:50vh
+}
+.you-win {
+    z-index:100;
+    color:white;
+    font-size:2rem;
+    font-weight:700;
+    position:absolute;
+    top:40vh
+}
+.win-background {
+    background-color:black;
+    opacity:50%;
+    height: 120vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+}

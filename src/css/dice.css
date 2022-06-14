@@ -1,0 +1,23 @@
+#dice-canvas {
+    display:grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+.dice {
+    height:2rem;
+    width:2rem;
+    background-color:#b56576;
+    color:white;
+    border-radius:10px;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    margin:5px;
+    box-shadow: rgb(0 0 0 / 18%) 0px 4px 3px;
+    cursor:pointer;
+}
+.dice:hover {
+    background-color:#e56b6f
+}
+.stopped {
+    background-color:#eaac8b
+}
